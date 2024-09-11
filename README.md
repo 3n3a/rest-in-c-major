@@ -2,10 +2,18 @@
 
 > Let your postgres database live in constant fear of (un)REST.
 
+## Install Dependencies
+
+Works for Debian / Ubuntu
+
+```bash
+make install-deps
+```
+
 ## Build
 
 ```bash
-gcc -o rest-in-c-major rest-in-c-major.c -lulfius -ljansson -lpq
+make
 ```
 
 ## Run
