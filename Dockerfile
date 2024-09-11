@@ -18,5 +18,7 @@ RUN apt-get update && \
 
 COPY --from=builder /src/bin/rest-in-c-major /usr/local/bin/rest-in-c-major
 
-ENTRYPOINT ["/usr/local/bin/rest-in-c-major"]
-CMD ["${DSN:-postgres}", "${PORT:-5000}"]
+COPY ./entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]

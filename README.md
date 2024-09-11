@@ -21,3 +21,15 @@ make
 ```bash
 ./rest-in-c-major "postgres..." 5000
 ```
+
+## Docker Build
+
+```bash
+sudo docker build -t ricm .
+```
+
+## Docker Run
+
+```bash
+sudo docker run -d -p 5000:5000 -e PORT=5000 -e DATABASE_URL="<dsn>" ricm 
+```
